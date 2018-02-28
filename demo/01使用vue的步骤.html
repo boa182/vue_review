@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!--1.引入vue.js文件-->
+		<script src="../lib/vue.js"></script>
+		<title>first use</title>
+	</head>
+	<body>
+		<div id="app">
+			<!--3.通过插值模板使用data里面的值-->
+			<h1>{{name}}</h1>
+		</div>
+		<script>
+			var vm = new Vue({
+				el:'#app',//2.选择器，这个实例作用于这个元素
+				data:{
+					name:'boa'
+				}
+			})
+		</script>
+	</body>
+</html>
