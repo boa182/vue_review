@@ -49,3 +49,5 @@
 ### VM：ViewModel，就是连接数据和视图的桥梁，当 Model 发生改变的时候，ViewModel 便将数据映射到视图。
 
 ## 四、初次使用vue（看demo文件夹里面的01）
+![Image text](https://github.com/boa182/vue_review/blob/master/images/p1.PNG)
+![Image discription](demo1)
