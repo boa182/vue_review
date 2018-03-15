@@ -1,18 +1,10 @@
-# personal
+# 通过一个vue项目学习
 
-> A Vue.js project
+## 1.vue框架搭建
+npm install -g vue-cli <br/>
+vue init webpack-simple 项目名称 <br/>
+进入上一步初始化的项目文件夹  npm install <br/>
+npm run dev <br/>
+引入ui框架muse-u <br/>
 
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-```
-
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## 2.

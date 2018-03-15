@@ -3,6 +3,7 @@
 ## <a href="https://github.com/boa182/vue_review/tree/master/project">
 项目总结
 </a>
+#### 下面的是基础总结
 
 ## 一、认识vue
 ### 1、什么是vue？
