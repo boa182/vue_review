@@ -2,10 +2,12 @@
 #### 下面的是遇到的坑
 ## 一、项目中的坑
 ### 1、Unable to preventDefault inside passive event listener
-	最近做项目经常在 chrome 的控制台看到如下提示：<br />
-	Unable to preventDefault inside passive event listener due to target being treated as passive. See https://www.chromestatus.com/features/5093566007214080 <br />
-	这是由于浏览器必须要在执行事件处理函数之后，才能知道有没有掉用过 preventDefault() ，这就导致了浏览器不能及时响应滚动，略有延迟。<br />
-	所以为了让页面滚动的效果如丝般顺滑，从 chrome56 开始，在 window、document 和 body 上注册的 touchstart 和 touchmove 事件处理函数，会默认为是 passive: true。浏览器忽略 preventDefault() 就可以第一时间滚动了。<br />
+	最近做项目经常在 chrome 的控制台看到如下提示： 
+	Unable to preventDefault inside passive event listener due to target being treated as passive.
+	See https://www.chromestatus.com/features/5093566007214080 
+	这是由于浏览器必须要在执行事件处理函数之后，才能知道有没有掉用过 preventDefault() ，这就导致了浏览器不能及时响应滚动，略有延迟。
+	所以为了让页面滚动的效果如丝般顺滑，从 chrome56 开始，在 window、document 和 body 上注册的 touchstart 和 touchmove 事件处理函数，
+	会默认为是 passive: true。浏览器忽略 preventDefault() 就可以第一时间滚动了。
 ```javascript
 	举个栗子：
 	wnidow.addEventListener('touchmove', func) 效果和下面一句一样
