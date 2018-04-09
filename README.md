@@ -20,8 +20,9 @@
 window.addEventListener('touchmove', func, { passive: false })
 
 2、应用 CSS 属性 touch-action: none; 这样任何触摸事件都不会产生默认行为，但是 touch 事件照样触发。
-touch-action 还有很多选项，详细请参考：<a href="https://w3c.github.io/pointerevents/#the-touch-action-css-property"></a>
+
 ```
+touch-action 还有很多选项，详细请参考：<a href="https://w3c.github.io/pointerevents/#the-touch-action-css-property">click me!</a>
 #### 下面的是基础总结
 ## 一、认识vue
 ### 1、什么是vue？
