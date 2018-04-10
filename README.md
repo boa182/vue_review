@@ -2,10 +2,12 @@
 #### 下面的是遇到的坑
 ## 一、项目中的坑
 ### 1、Unable to preventDefault inside passive event listener
-	最近做项目经常在 chrome 的控制台看到如下提示：<br />
-	Unable to preventDefault inside passive event listener due to target being treated as passive. See https://www.chromestatus.com/features/5093566007214080 <br />
-	这是由于浏览器必须要在执行事件处理函数之后，才能知道有没有掉用过 preventDefault() ，这就导致了浏览器不能及时响应滚动，略有延迟。<br />
-	所以为了让页面滚动的效果如丝般顺滑，从 chrome56 开始，在 window、document 和 body 上注册的 touchstart 和 touchmove 事件处理函数，会默认为是 passive: true。浏览器忽略 preventDefault() 就可以第一时间滚动了。<br />
+	最近做项目经常在 chrome 的控制台看到如下提示： 
+	Unable to preventDefault inside passive event listener due to target being treated as passive.
+	See https://www.chromestatus.com/features/5093566007214080 
+	这是由于浏览器必须要在执行事件处理函数之后，才能知道有没有掉用过 preventDefault() ，这就导致了浏览器不能及时响应滚动，略有延迟。
+	所以为了让页面滚动的效果如丝般顺滑，从 chrome56 开始，在 window、document 和 body 上注册的 touchstart 和 touchmove 事件处理函数，
+	会默认为是 passive: true。浏览器忽略 preventDefault() 就可以第一时间滚动了。
 ```javascript
 	举个栗子：
 	wnidow.addEventListener('touchmove', func) 效果和下面一句一样
@@ -17,12 +19,15 @@
 1）注册处理函数时，用如下方式，明确声明为不是被动的
 window.addEventListener('touchmove', func, { passive: false })
 
-2）应用 CSS 属性 touch-action: none; 这样任何触摸事件都不会产生默认行为，但是 touch 事件照样触发。
-touch-action 还有很多选项，详细请参考：https://w3c.github.io/pointerevents/#the-touch-action-css-property
-```
+2) 应用 CSS 属性 touch-action: none; 这样任何触摸事件都不会产生默认行为，但是 touch 事件照样触发。
+touch-action 还有很多选项，详细请参考：<a href="https://w3c.github.io/pointerevents/#the-touch-action-css-property">click me!</a>
+
 ### 2、项目数据数组和组件一多起来，维护和查看就变得很困难了。。
 - 你不知道它们各自携带的信息是啥，渲染页面，开发新功能应该调用哪个
 - 一个组件嵌套了N多个子组件，然后N多个子组件又互相嵌套，代码数量很长很长，你不知道各自组件间的通信，嵌套关系，心好累<br/>
+#### 解决方案：vue-devtools
+
+
 #### 下面的是基础总结
 ## 一、认识vue
 ### 1、什么是vue？
