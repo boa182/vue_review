@@ -43,6 +43,34 @@ npm run build
 - vue项目, 打开f12, 选择vue就可以使用了.
 - vue是数据驱动的, 这样就能看到对应数据了, 方便我们进行调试
 ![Image text](https://github.com/boa182/vue_review/blob/master/images/2.png)
+
+### 3、vue的transition使用
+```
+ <transition name="fade">
+ 	//所有需要过渡的内容
+ <div show="true"><div>
+ </transition>
+```
+```css
+@keyframes pullUp {
+    from {
+      transform: translate3d(0, 100%, 0);
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  .fade-enter-active,
+  .fade-leave-active {
+    animation: pullUp .5s;
+  }
+  .fade-enter,
+  .fade-leave-to {
+    opacity: 0;
+    animation: pullUp .5s reverse;
+  }
+```
+
 ## 二、基础总结
 ## 一、认识vue
 ### 1、什么是vue？
