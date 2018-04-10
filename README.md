@@ -26,9 +26,23 @@ touch-action 还有很多选项，详细请参考：<a href="https://w3c.github.
 ### 2、项目数据数组和组件一多起来，维护和查看就变得很困难了。。
 - 你不知道它们各自携带的信息是啥，渲染页面，开发新功能应该调用哪个
 - 一个组件嵌套了N多个子组件，然后N多个子组件又互相嵌套，代码数量很长很长，你不知道各自组件间的通信，嵌套关系，心好累<br/>
-#### 解决方案：vue-devtools
-
-
+#### 解决方案：使用vue-devtools
+1.**安装**
+- （1）chrome商店直接安装，要翻墙
+- （2）手动安装
+```
+git clone https://github.com/vuejs/vue-devtools.git
+npm install //如果太慢的话，可以安装一个cnpm, 然后命令换成 cnpm install
+npm run build
+游览器输入地址“chrome://extensions/”进入扩展程序页面，点击“加载已解压的扩展程序...”按钮，选择vue-devtools>shells下的chrome文件夹。
+/**
+*如果看不见“加载已解压的扩展程序...”按钮，则需要勾选“开发者模式”。
+*/
+```
+2.**vue-devtools的使用**
+- vue项目, 打开f12, 选择vue就可以使用了.
+- vue是数据驱动的, 这样就能看到对应数据了, 方便我们进行调试
+![Image text](https://github.com/boa182/vue_review/blob/master/images/2.png)
 ## 二、基础总结
 ## 一、认识vue
 ### 1、什么是vue？
