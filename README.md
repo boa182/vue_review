@@ -29,7 +29,7 @@ touch-action 还有很多选项，详细请参考：<a href="https://w3c.github.
 #### 解决方案：vue-devtools
 
 
-#### 下面的是基础总结
+## 二、基础总结
 ## 一、认识vue
 ### 1、什么是vue？
 	 Vue.js 是一套构建用户界面(UI)的渐进式JavaScript框架
