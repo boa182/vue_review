@@ -21,6 +21,7 @@ window.addEventListener('touchmove', func, { passive: false })
 
 2) 应用 CSS 属性 touch-action: none; 这样任何触摸事件都不会产生默认行为，但是 touch 事件照样触发。
 touch-action 还有很多选项，详细请参考：<a href="https://w3c.github.io/pointerevents/#the-touch-action-css-property">click me!</a>
+```
 
 ### 2、项目数据数组和组件一多起来，维护和查看就变得很困难了。。
 - 你不知道它们各自携带的信息是啥，渲染页面，开发新功能应该调用哪个
