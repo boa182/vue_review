@@ -45,7 +45,7 @@ npm run build
 - vue是数据驱动的, 这样就能看到对应数据了, 方便我们进行调试
 ![Image text](https://github.com/boa182/vue_review/blob/master/images/2.png)
 
-3.**vue的transition使用**
+### 3、**vue的transition使用**
 ```
  <transition name="fade">
  	//所有需要过渡的内容
@@ -72,8 +72,38 @@ npm run build
   }
 ```
 
-4.**vue-router路由懒加载(解决vue项目首次加载慢)**
+### 4、**vue-router路由懒加载(解决vue项目首次加载慢)**
+- 懒加载：也叫延迟加载，即在需要的时候进行加载，随用随载。
+- 为什么需要？ 
+```
+像vue这种单页面应用，如果没有应用懒加载，运用webpack打包后的文件将会异常的大，造成进入首页时，需要加载的内容过多，时间过长，会出啊先长时间的白屏，即使做了loading也是不利于用户体验，而运用懒加载则可以将页面进行划分，需要的时候加载页面，可以有效的分担首页所承担的加载压力，减少首页加载用时
+```
+- 假设你的路由配置是这样的
+```
+import MainPage from './routes/MainPage.vue'
+import OtherMassivePage from './routes/OtherMassivePage.vue'
+ 
+const router = new Router({
+	routes: [
+			{ path: '/main', component: MainPage },
+			{ path: '/other', component: OtherMassivePage }
+	]
+}) 
 
+export default router
+```
+-  现在使用require.ensure来替代import，并且给chunk命名，按组分块
+```
+const MainPage = r => require.ensure([], () => r(require('./routes/MainPage.vue')),'MainPage')
+const OtherMassivePage = r => require.ensure([], () => r(require('./routes/OtherMassivePage.vue')),'OtherMassivePage')
+
+const router = new Router({
+	routes: [
+		{ path: '/main', component: MainPage },
+		{ path: '/other', component: OtherMassivePage }
+	]
+})
+```
 
 ## 二、基础总结
 ## 一、认识vue
