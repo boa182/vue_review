@@ -106,6 +106,8 @@ const router = new Router({
 		{ path: '/other', component: OtherMassivePage }
 	]
 })
+
+export default router
 ```
 
 ## 二、基础总结
