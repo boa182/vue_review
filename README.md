@@ -39,12 +39,13 @@ npm run build
 *如果看不见“加载已解压的扩展程序...”按钮，则需要勾选“开发者模式”。
 */
 ```
+
 2.**vue-devtools的使用**
 - vue项目, 打开f12, 选择vue就可以使用了.
 - vue是数据驱动的, 这样就能看到对应数据了, 方便我们进行调试
 ![Image text](https://github.com/boa182/vue_review/blob/master/images/2.png)
 
-### 3、vue的transition使用
+3.**vue的transition使用**
 ```
  <transition name="fade">
  	//所有需要过渡的内容
@@ -70,6 +71,9 @@ npm run build
     animation: pullUp .5s reverse;
   }
 ```
+
+4.**vue-router路由懒加载(解决vue项目首次加载慢)**
+
 
 ## 二、基础总结
 ## 一、认识vue
