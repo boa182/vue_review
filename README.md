@@ -1,4 +1,4 @@
-# 归纳总结那些年学到的vue和遇到的vue坑
+# 归纳总结那些年学到的vue和遇到的vue坑<span alias="smile" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f604.png" ios-version="6.0"><img class="emoji" title=":bowtie:" alt=":bowtie:" src="https://assets-cdn.github.com/images/icons/emoji/bowtie.png" :height="height" :width="width"></span>
 #### 下面的是遇到的坑
 ## 一、项目中的坑
 ### 1、Unable to preventDefault inside passive event listener
