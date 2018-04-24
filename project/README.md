@@ -33,3 +33,12 @@ npm install sass-loader --save-dev
 }
 ```
 - 第三步，在需要用到scss的地方写上
+```html
+<style lang="scss" scoped>
+#app{
+  height: 100px;
+  width: 100px;
+  background: #ccc;
+}
+</style>
+```

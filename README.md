@@ -1,13 +1,7 @@
-<<<<<<< HEAD
 # 归纳总结那些年学到的vue和遇到的vue坑
 ## 一、个人练习项目
-- <a href="">individual event</a>
+- <a href="https://github.com/boa182/vue_review/tree/master/project">individual event</a>
 ## 二、工作中遇到vue的坑
-=======
-# 归纳总结那些年学到的vue和遇到的vue坑<span alias="smile" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f604.png" ios-version="6.0"><img class="emoji" title=":bowtie:" alt=":bowtie:" src="https://assets-cdn.github.com/images/icons/emoji/bowtie.png" :height="height" :width="width"></span>
-#### 下面的是遇到的坑
-## 一、项目中的坑
->>>>>>> be725204a1ded3e428317f2cd560fc42a81d1b21
 ### 1、Unable to preventDefault inside passive event listener
 	最近做项目经常在 chrome 的控制台看到如下提示： 
 	Unable to preventDefault inside passive event listener due to target being treated as passive.
