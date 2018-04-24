@@ -1,6 +1,7 @@
 # 归纳总结那些年学到的vue和遇到的vue坑
-#### 下面的是遇到的坑
-## 一、项目中的坑
+## 一、个人练习项目
+- <a href="">individual event</a>
+## 二、工作中遇到vue的坑
 ### 1、Unable to preventDefault inside passive event listener
 	最近做项目经常在 chrome 的控制台看到如下提示： 
 	Unable to preventDefault inside passive event listener due to target being treated as passive.
@@ -110,14 +111,14 @@ const router = new Router({
 export default router
 ```
 
-## 二、基础总结
-## 一、认识vue
+## 三、基础总结
+## （一）、认识vue
 ### 1、什么是vue？
 	 Vue.js 是一套构建用户界面(UI)的渐进式JavaScript框架
 ### 2、为什么使用vue？
 	vue自身不是一个全能框架--它只聚焦于视图层，因此它非常容易学习，非常容易与其他库或已有项目整合。另一方面， 在与相关工具和支持库一起使用时，Vue.js 也能完美地驱动复杂的单页应用。
 
-## 二、认识数据驱动模式
+## （二）、认识数据驱动模式
 ###	 区别：
 ###   jquery是操作DOM节点的
 ###   vue是数据驱动的设计模式
@@ -141,7 +142,7 @@ export default router
 	})
 ```
 
-## 三、浅识MVVM模式
+## （三）、浅识MVVM模式
 ### M：Model，称之为数据模型，在前端以对象的形式表现。
 
 ```javascript
@@ -158,7 +159,7 @@ export default router
 
 ### VM：ViewModel，就是连接数据和视图的桥梁，当 Model 发生改变的时候，ViewModel 便将数据映射到视图。
 
-## 四、初次使用vue（看demo文件夹里面的01）
+## （四）、初次使用vue（看demo文件夹里面的01）
 ![Image text](https://github.com/boa182/vue_review/blob/master/images/p1.PNG)
 
 
