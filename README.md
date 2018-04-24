@@ -1,6 +1,7 @@
 # 归纳总结那些年学到的vue和遇到的vue坑
 ## 一、个人练习项目
 - <a href="https://github.com/boa182/vue_review/tree/master/project">individual event</a>
+
 ## 二、工作中遇到vue的坑
 ### 1、Unable to preventDefault inside passive event listener
 	最近做项目经常在 chrome 的控制台看到如下提示： 
