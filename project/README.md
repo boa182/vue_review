@@ -12,7 +12,7 @@
 - vue -V查看版本号，看是否安装成功
 
 2.**初始化项目**
-- vue init <template-name> <project-name>
+- vue init template-name project-name
 ```
   init:表示我要用vue-cli来初始化项目
   <template-name>:表示模板名称，这里用了webpack，一个全面的webpack+vue-loader的模板。
