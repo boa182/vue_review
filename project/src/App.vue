@@ -9,10 +9,6 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-#app{
-  height: 100px;
-  width: 100px;
-  background: #ccc;
-}
+<style lang="scss">
+@import 'styles/base.scss'
 </style>
