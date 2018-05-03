@@ -42,3 +42,22 @@ npm install sass-loader --save-dev
 }
 </style>
 ```
+## 目录结构
+```shell
+├─assets                    // 图片资源
+|
+├─components                // 组件
+│  └─common                 // 公共组件
+|
+├─page                      // 页面
+|
+├─router                    // vue-router
+│  ├─module
+|  └─index.js               // 路由入口文件
+|
+├─store                     // vuex
+|
+├─styles                    // 样式文件
+|
+└─utility                   // 公共工具，方法
+```
