@@ -9,6 +9,6 @@ export default {
 }
 </script>
 
-<style lang="scss">
-@import 'styles/base.scss'
+<style lang="less">
+@import 'styles/base.less';
 </style>

@@ -36,7 +36,7 @@ const webpackConfig = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src'),
+      '@': resolve('src')
     }
   },
   module: {
@@ -77,8 +77,8 @@ const webpackConfig = {
         }
       },
       {
-        test: /\.scss$/,
-        loaders: ["style", "css", "sass"]
+        test: /\.less$/,
+        loaders: ['style', 'css', 'less']
       }
     ]
   },

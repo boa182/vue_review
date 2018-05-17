@@ -19,29 +19,47 @@
   <project-name>:表示项目名称
 ```
 
-3.**配置scss**
+3.**配置scss/less**
+- 因为本项目引入的ui框架是用less的，所以这里就引less
 - 第一步
 ```
+npm install less less-loader --save-dev
+
+(如果是sass，如下：)
 npm install node-sass --save-dev
 npm install sass-loader --save-dev
 ```
 - 第二步 打开webpack.base.config.js在loaders里面加上
 ```
 {
+  test: /\.less$/,
+  loader: ["style", "css", "less"],
+}
+(如果是sass，如下：)
+{
   test: /\.scss$/,
   loader: ["style", "css", "sass"]
 }
 ```
-- 第三步，在需要用到scss的地方写上
+- 第三步，在需要用到scss/less的地方写上
 ```html
-<style lang="scss" scoped>
+<style lang="scss/less" scoped>
 #app{
   height: 100px;
   width: 100px;
   background: #ccc;
 }
 </style>
+
 ```
+- PS：用@import引进来的样式，后面要加';'
+```
+<style lang="less">
+@import 'styles/base.less';
+</style>
+否则就会报：'missing semi-colon or unrecognised media features on import
+```
+
 ## 目录结构
 ```shell
 ├─assets                    // 图片资源
