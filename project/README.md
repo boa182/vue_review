@@ -59,6 +59,33 @@ npm install sass-loader --save-dev
 </style>
 否则就会报：'missing semi-colon or unrecognised media features on import
 ```
+4.**webpack配置相对路径**
+- 在webpack.base.conf.js文件下
+```
+resolve: {
+    extensions: ['.js', '.vue', '.json'],
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js',
+      'src': resolve('src'),
+      'styles': resolve('src/styles'),
+      'assets': resolve('src/assets'),
+      'config': resolve('src/config'),
+      'store': resolve('src/store'),
+      'components': resolve('src/components'),
+      'router': resolve('src/router'),
+      'page': resolve('src/page'),
+      'utility': resolve('src/utility')
+    }
+  }
+```
+- 配置后记得重新npm run dev,然后就可以在需要使用的文件里面
+```
+直接
+import 'utility/rem.js'
+import router from 'router'
+component: () => import('page/home.vue')
+而不用写相对路径./
+```
 
 ## 目录结构
 ```shell

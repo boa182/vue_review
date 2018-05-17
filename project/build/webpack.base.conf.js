@@ -36,7 +36,15 @@ const webpackConfig = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src')
+      'src': resolve('src'),
+      'styles': resolve('src/styles'),
+      'assets': resolve('src/assets'),
+      'config': resolve('src/config'),
+      'store': resolve('src/store'),
+      'components': resolve('src/components'),
+      'router': resolve('src/router'),
+      'page': resolve('src/page'),
+      'utility': resolve('src/utility')
     }
   },
   module: {
