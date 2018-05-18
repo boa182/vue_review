@@ -111,7 +111,18 @@ const router = new Router({
 
 export default router
 ```
+### 5.**加载后台图片失败时，如何显示默认图片的骚操作**
+```javascript
+<img :src="path+item.cosuretyPhoto+token" :onerror="errorImg">
 
+computed: {
+	errorImg () {
+		return 'this.src="' + require('assets/surety/avatar.png') + '"'
+	}
+}
+
+
+```
 ## 三、基础总结
 ## （一）、认识vue
 ### 1、什么是vue？
