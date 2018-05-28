@@ -174,4 +174,20 @@ computed: {
 ## （四）、初次使用vue（看demo文件夹里面的01）
 ![Image text](https://github.com/boa182/vue_review/blob/master/images/p1.PNG)
 
-
+## (五)、Vue Router相关
+### router link 跳转传参
+```javascript
+<router-link 
+	:to="{path:'/employeeDetail',query:{name:'boa'}}">
+	申诉
+</router-link>
+```
+### this.$router.push 传参
+```javascript
+this.$router.push({
+	path: '/employeeDetail',
+	query: {
+		name: 'boa'
+	}
+})
+```
