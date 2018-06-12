@@ -106,6 +106,3 @@ component: () => import('page/home.vue')
 |
 └─utility                   // 公共工具，方法
 ```
-
-## 项目立意
-- 初步是想把自己在工作实现的功能，当做一个个demo封装在这里,方便复用

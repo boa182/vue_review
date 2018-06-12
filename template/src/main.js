@@ -4,14 +4,12 @@ import 'utility/rem.js'
 import Vue from 'vue'
 import App from './App'
 import router from 'router'
-import { XInput, Group } from 'vux'
-import CFoot from 'components/c-foot.vue'
+import {XInput, Group} from 'vux'
 
 Vue.config.productionTip = false
 const components = {
   'x-input': XInput,
-  'group': Group,
-  'c-foot': CFoot
+  'group': Group
 }
 for (let [key, value] of Object.entries(components)) {
   Vue.component(key, value)
