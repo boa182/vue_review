@@ -11,9 +11,9 @@
 	所以为了让页面滚动的效果如丝般顺滑，从 chrome56 开始，在 window、document 和 body 上注册的 touchstart 和 touchmove 事件处理函数，
 	会默认为是 passive: true。浏览器忽略 preventDefault() 就可以第一时间滚动了。
 ```javascript
-	举个栗子：
-	wnidow.addEventListener('touchmove', func) 效果和下面一句一样
-	wnidow.addEventListener('touchmove', func, { passive: true })
+   举个栗子：
+   wnidow.addEventListener('touchmove', func) 效果和下面一句一样
+   wnidow.addEventListener('touchmove', func, { passive: true })
 ```
 这就导致了一个问题：如果在以上这 3 个元素的 touchstart 和 touchmove 事件处理函数中调用 e.preventDefault() ，会被浏览器忽略掉，并不会阻止默认行为。<br/>
 解决方案2个：<br />
