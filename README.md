@@ -178,16 +178,16 @@ computed: {
 ### router link 跳转传参
 ```javascript
 <router-link 
-	:to="{path:'/employeeDetail',query:{name:'boa'}}">
-	申诉
+    :to="{path:'/employeeDetail',query:{name:'boa'}}">
+    申诉
 </router-link>
 ```
 ### this.$router.push 传参
 ```javascript
 this.$router.push({
-	path: '/employeeDetail',
-	query: {
-		name: 'boa'
-	}
+   path: '/employeeDetail',
+   query: {
+      name: 'boa'
+   }
 })
 ```
