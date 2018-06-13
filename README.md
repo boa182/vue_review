@@ -121,7 +121,23 @@ computed: {
 	}
 }
 
-
+```
+### 6.**在vue项目中使用svg图**
+- 传统使用方法：
+```
+   首先新建一个svg.vue文件，在该文件中使用svg标签定义一堆svg图，再分别用symbol标签分别定义一个个svg图，
+再使用id来标记各个svg图，最后在需要实用的地方使用use标签绑定每个id即可使用svg图 
+```
+- 新方法：通过插件使用svg图
+```
+步骤1： npm install vue2-svg-icon --save-dev
+步骤2：把svg图文件xxx.svg放到src/assets/svg下
+步骤3: 在入口文件main.js文件中配置:
+      import Icon from 'vue2-svg-icon/Icon.vue'
+      vue.component('icon',Icon)
+步骤4：在vue文件中使用svg
+     <icon name="xxx" :width="'20px'" :height="'20px'"></icon>
+     xxx就是你的svg文件名
 ```
 ## 三、基础总结
 ## （一）、认识vue
