@@ -191,3 +191,48 @@ this.$router.push({
    }
 })
 ```
+
+## (六)、vuex的使用
+1.**最简单的使用**
+- 创建一个简单的store
+```JavaScript
+import Vue from 'vue'
+import Vuex from 'vuex'
+
+Vue.use(Vuex)
+
+export default new Vuex.Store({
+  state: {
+    count: 0
+  },
+  mutations: {
+    increment (state) {
+      state.count++
+    },
+    reduce (state) {
+      state.count--
+    }
+  }
+})
+```
+- 由于store的状态是响应式的，在组件中调用store中的状态仅需在计算属性中返回即可。
+```javascript
+<p>{{count}}</p>
+
+computed: {
+	count () {
+		return this.$store.state.count
+	}
+},
+```
+- 通过提交mutation（commit）的方式，而非直接改变状态对象
+```javascript
+methods: {
+	cut () {
+		this.$store.commit('reduce')
+	},
+	add () {
+		this.$store.commit('increment')
+	}
+}
+```

@@ -4,14 +4,16 @@ import 'utility/rem.js'
 import Vue from 'vue'
 import App from './App'
 import router from 'router'
-import { XInput, Group } from 'vux'
+import store from './store/index'
+import { XInput, Group, XHeader } from 'vux'
 import CFoot from 'components/c-foot.vue'
 
 Vue.config.productionTip = false
 const components = {
   'x-input': XInput,
   'group': Group,
-  'c-foot': CFoot
+  'c-foot': CFoot,
+  'x-header': XHeader
 }
 for (let [key, value] of Object.entries(components)) {
   Vue.component(key, value)
@@ -21,6 +23,7 @@ for (let [key, value] of Object.entries(components)) {
 new Vue({
   el: '#app',
   router,
+  store,
   render: h => h(App),
   template: '<App/>'
 })

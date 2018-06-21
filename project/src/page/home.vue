@@ -7,6 +7,8 @@
 <script>
 export default {
   name: 'home',
+  computed: {
+  },
   data () {
     return {
       footList: [
@@ -22,6 +24,12 @@ export default {
         }
       ]
     }
+  },
+  created () {
+    // 通过store.commit方法触发状态改变
+    // this.$store.commit('increment')
+    // 通过store.state来获取状态对象
+    // console.log(this.$store.state.count)
   }
 }
 </script>
