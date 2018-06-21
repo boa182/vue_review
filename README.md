@@ -252,3 +252,54 @@ methods: {
 	}
 }
 ```
+
+2.**vuex——state访问**
+<h4>方法一、直接获取</h4>
+```
+<span>{{$store.state.count}}<span>
+```
+<h4>方法二、通过computed的计算属性直接赋值</h4>
+```
+<span>{{count}}</span>
+
+<script type="text/javascript">
+    computed: {
+        count(){
+            return this.$store.state.count
+        }
+    } 
+</script>
+```
+<h4>方法三、通过mapState的计算属性直接赋值</h4>
+```
+<span>{{count}}{{count1}}{{count2}}</span>
+
+import {mapState} from 'vuex'
+computed: mapState({
+ count: state => state.count,
+ count1: state => state.count1,
+ count2: state => state.count2,
+
+// 为了能够使用'this'获取局部状态，必须使用常规函数
+ countPlusLocalState (state) {
+	 return state.count + this.localCount
+ }
+})
+```
+<h4>方法四、通过mapState的数组赋值</h4>
+```
+<span>{{count}}{{count1}}{{count2}}</span>
+
+import {mapState} from 'vuex'
+computed: mapState(['count', 'count1', 'count2'])
+```
+<h4>方法五、对象展开运算符</h4>
+```
+// 使用于它与局部计算属性混合使用
+computed: {
+	localComputed () {},
+  ...mapState({
+    count: state => state.count
+  })
+}
+```

@@ -5,7 +5,9 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    count: 0
+    count: 0,
+    count1: 1,
+    count2: 2
   },
   mutations: {
     increment (state) {
