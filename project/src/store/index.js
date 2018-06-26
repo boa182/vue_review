@@ -7,7 +7,11 @@ export default new Vuex.Store({
   state: {
     count: 0,
     count1: 1,
-    count2: 2
+    count2: 2,
+    filtersList: [
+      { id: 1, name: 'laoxie' },
+      { id: 2, name: 'lenmo' }
+    ]
   },
   mutations: {
     increment (state) {
@@ -15,6 +19,18 @@ export default new Vuex.Store({
     },
     reduce (state) {
       state.count--
+    }
+  },
+  getters: {
+    total: (state) => (symblo) => {
+      if (symblo) {
+        return symblo + (state.count * 1 + 3)
+      } else {
+        return '$ ' + state.count
+      }
+    },
+    filtration: (state) => (filtrationFactor) => {
+      return state.filtersList.find(item => item.id === filtrationFactor)
     }
   }
 })

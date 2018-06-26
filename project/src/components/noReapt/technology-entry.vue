@@ -11,6 +11,11 @@
         <span @click="add()">加</span>
       </p>
     </group>
+    <group :title="'2、getter的简单使用'" class="getters">
+      <p>price: <span>{{$store.getters.total}}</span></p>
+      <p>price: <span>{{$store.getters.total('￥')}}</span></p>
+      <p>name: <span>{{$store.getters.filtration(1).name}}</span></p>
+    </group>
   </div>
 </template>
 <script>
@@ -48,6 +53,11 @@ export default {
       width: 100px;
       background: skyblue;
       color: #fff;
+    }
+  }
+  .getters{
+    p{
+      padding: 5px;
     }
   }
 }

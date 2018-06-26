@@ -209,7 +209,7 @@ this.$router.push({
 ```
 
 ## (六)、vuex的使用
-1.**最简单的使用**
+### 1.最简单的使用
 - 创建一个简单的store
 ```JavaScript
 import Vue from 'vue'
@@ -253,7 +253,7 @@ methods: {
 }
 ```
 
-2.**vuex——state访问**
+### 2.vuex——state访问
 <h4>方法一、直接获取</h4>
 ```
 <span>{{$store.state.count}}<span>
@@ -301,5 +301,63 @@ computed: {
   ...mapState({
     count: state => state.count
   })
+}
+```
+
+### 3.getter的使用
+- 为什么使用getter？
+
+```
+有的组件中获取到 store 中的state,  需要对进行加工才能使用，computed 属性中就需要写操作函数，如果有多个组件中都需要进行这个操作，那么在各个组件中都写相同的函数，那就非常麻烦，这时可以把这个相同的操作写到store 中的getters,  每个组件只要引用getter 就可以了。
+```
+- 创建一个getters
+```javascript
+state: {
+  count: 0,
+  filtersList: [
+    { id: 1, name: 'laoxie' },
+    { id: 2, name: 'lenmo' }
+  ]
+},
+getters: {
+  total: (state) => (symblo) => {
+    if (symblo) {
+      return symblo + (state.count * 1 + 3)
+    } else {
+      return '$ ' + state.count
+    }
+  },
+  filtration: (state) => (filtrationFactor) => {
+    return state.filtersList.find(item => item.id === filtrationFactor)
+  }
+}
+```
+- getter通过属性访问
+```html
+<p>price: <span>{{$store.getters.total}}</span></p>
+```
+- gettert通过方法访问
+```html
+<!-- 传参￥ -->
+<p>price: <span>{{$store.getters.total('￥')}}</span></p>
+<!--使用id为1的name -->
+<p>name: <span>{{$store.getters.filtration(1).name}}</span></p>
+```
+- mapGetters辅助函数
+```javascript
+<h3>count-{{total('￥')}}</h3>
+
+computed: {
+  ...mapGetters([
+      'total'
+  ])
+}
+```
+- mapGetters辅助函数之别名
+```javascript
+computed: {
+  ...mapGetters([
+      amount: 'total'
+  ])
 }
 ```

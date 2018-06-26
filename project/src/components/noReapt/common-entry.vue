@@ -1,7 +1,12 @@
 <template>
   <div class="common-entry">
-    常用组件
+     <x-header
+        :left-options="{backText:'', showBack: false}">
+        常用组件
+    </x-header>
     <span>{{count}}{{count1}}{{count2}}</span>
+    <div>{{$store.getters.total()}}</div>
+    <div>{{$store.getters.total('￥')}}</div>
   </div>
 </template>
 <script>
