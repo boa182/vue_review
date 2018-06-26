@@ -255,10 +255,13 @@ methods: {
 
 ### 2.vuex——state访问
 <h4>方法一、直接获取</h4>
+
 ```
 <span>{{$store.state.count}}<span>
 ```
+
 <h4>方法二、通过computed的计算属性直接赋值</h4>
+
 ```
 <span>{{count}}</span>
 
@@ -270,7 +273,9 @@ methods: {
     } 
 </script>
 ```
+
 <h4>方法三、通过mapState的计算属性直接赋值</h4>
+
 ```
 <span>{{count}}{{count1}}{{count2}}</span>
 
@@ -286,14 +291,18 @@ computed: mapState({
  }
 })
 ```
+
 <h4>方法四、通过mapState的数组赋值</h4>
+
 ```
 <span>{{count}}{{count1}}{{count2}}</span>
 
 import {mapState} from 'vuex'
 computed: mapState(['count', 'count1', 'count2'])
 ```
+
 <h4>方法五、对象展开运算符</h4>
+
 ```
 // 使用于它与局部计算属性混合使用
 computed: {
