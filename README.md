@@ -302,6 +302,7 @@ computed: mapState(['count', 'count1', 'count2'])
 ```
 
 <h4>方法五、对象展开运算符</h4>
+
 ```
 // 使用于它与局部计算属性混合使用
 computed: {
