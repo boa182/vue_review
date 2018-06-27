@@ -370,3 +370,30 @@ computed: {
   ])
 }
 ```
+
+### 4、action异步
+```javascript
+register ({commit}) {
+    axios.post('register', {
+        name: 'sam',
+        password: '123456'
+    }).then(() => {
+        console.log('注册成功');  // 注册成功
+        commit('SUCCESS');       // mutation
+    }).catch(err => {
+         console.log(err);  // catch 处理注册失败
+         commit('FAIL');
+    }   
+} 
+```
+- 分发action
+```
+<input type="button" value="register" @click="$store.dispatch('register')"/>
+```
+- mapActions(和mutation的使用方法基本一样)
+```
+methods: {
+  ...mapActions(['register']),
+  ...mapActions({reg: 'register'})
+}
+```
