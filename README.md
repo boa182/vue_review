@@ -141,7 +141,7 @@ computed: {
 ```
 
 ### 7.**vue中的$set的使用**
-- 情景:根据数据for循环生成一个有手风琴效果的列表
+- 情景:根据数据for循环生成一个有手风琴效果的列表<br />
 ![Image text](https://github.com/boa182/vue_review/blob/master/images/p3.png)
 ```html
 // html结构for循环生成
