@@ -139,6 +139,79 @@ computed: {
      <icon name="xxx" :width="'20px'" :height="'20px'"></icon>
      xxx就是你的svg文件名
 ```
+
+### 7.**vue中的$set的使用**
+- 情景:根据数据for循环生成一个有手风琴效果的列表
+![Image text](https://github.com/boa182/vue_review/blob/master/images/p3.png)
+```html
+// html结构for循环生成
+<div
+  class="cell-box"
+  v-for="(item,index) of list"
+  :key="index">
+  <cell
+    isLink
+    @click.native="showDatelist(item)"
+    :arrow-direction="item.isShow ? 'up' : 'down'"
+    :title="item.label">
+  </cell>
+  <div class="transition-fade" :style="{maxHeight: item.isShow ? (item.props.length*24) + 'px':0}">
+    <p
+      v-for="(p,i) in item.props"
+      :key="i">
+      {{p.name}}
+    </p>
+  </div>
+</div>
+```
+```javascript
+// 假设 后端返回给你的数据结构是这样的
+list: [
+        {
+          label: '列表一',
+          props: [
+            {name: 123},
+            {name: 132}
+          ]
+        },
+        {
+          label: '列表二',
+          props: [
+            {name: 123},
+            {name: 132}
+          ]
+        },
+        {
+          label: '列表三',
+          props: [
+            {name: 123},
+            {name: 132}
+          ]
+        }
+      ]
+// 你想给这个数组的每一个对象加一个isShow属性，方便之后的点击伸缩事件判断
+this.list.forEach((item) => {
+  item.isShow = false
+})
+// 但你会发现，你的点击事件成功赋值了，但却不会自动更新到视图上
+showDatelist (item) {
+  if (item.isShow === true) {
+    item.isShow = false
+  } else {
+    item.isShow = true
+  }
+}
+// 通过控制台打印数组的对象，你会发现label，props都有get()和set(),但isShow并没有，因此设置了isShow值vue并不会自动更新到视图上。这时候只要
+this.list.forEach((item) => {
+  this.$set(item, 'isShow', false)
+})
+```
+- 官方文档
+```
+Vue.set(target,key,value)
+因为 Vue 无法探测普通的新增属性。向响应式对象中添加一个属性，并确保这个新属性同样是响应式的，且触发视图更新，它必须用于向响应式对象上添加新属性。
+```
+
 ## 三、基础总结
 ## （一）、认识vue
 ### 1、什么是vue？

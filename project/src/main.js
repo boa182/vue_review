@@ -5,7 +5,7 @@ import Vue from 'vue'
 import App from './App'
 import router from 'router'
 import store from './store/index'
-import { XInput, Group, XHeader } from 'vux'
+import { XInput, Group, XHeader, Cell, CellFormPreview } from 'vux'
 import CFoot from 'components/c-foot.vue'
 
 Vue.config.productionTip = false
@@ -13,7 +13,9 @@ const components = {
   'x-input': XInput,
   'group': Group,
   'c-foot': CFoot,
-  'x-header': XHeader
+  'x-header': XHeader,
+  'cell': Cell,
+  'cell-form-preview': CellFormPreview
 }
 for (let [key, value] of Object.entries(components)) {
   Vue.component(key, value)
