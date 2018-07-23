@@ -142,7 +142,7 @@ computed: {
 
 ### 7.**vue中的$set的使用**
 - 需求：根据数组对象渲染一个手风琴效果的列表，如下图
-<br />>
+<br />
 ![Image text](https://github.com/boa182/vue_review/blob/master/images/p3.png)
 
 - 假设后端返回给你的数据结构是这样的
