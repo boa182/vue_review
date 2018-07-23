@@ -141,8 +141,7 @@ computed: {
 ```
 
 ### 7.**vue中的$set的使用**
-- 需求：根据数组对象渲染一个手风琴效果的列表，如下图
-<br />
+- 需求：根据数组对象渲染一个手风琴效果的列表，如下图 <br />
 ![Image text](https://github.com/boa182/vue_review/blob/master/images/p3.png)
 
 - 假设后端返回给你的数据结构是这样的
@@ -474,14 +473,52 @@ register ({commit}) {
     }   
 } 
 ```
+
 - 分发action
-```
+```html
 <input type="button" value="register" @click="$store.dispatch('register')"/>
 ```
+
 - mapActions(和mutation的使用方法基本一样)
-```
+
+```javascript
 methods: {
   ...mapActions(['register']),
   ...mapActions({reg: 'register'})
+}
+```
+
+## (七)、vue中父子间的传参
+
+1.**子传父**
+
+- this.$emit(event,...args)
+```
+evet: 要触发的父组件事件
+args: 将要传给父组件的参数
+```
+
+- 子组件的内容
+```javascript
+<button @click="iclick">点击传参给</button>
+
+methods: {
+  iclick () {
+    let dataList = {
+      a: 'data'
+    }
+    this.$emit('ievent',dataList,'lalala')
+  }
+}
+```
+
+- 父组件的内容
+```javascript
+<child v-on:ievent="ievent"></child>
+
+methods: {
+  ievent (...data) {
+    console.log('allData',data) // data为包含传过来所有数据的数组，第一个元素是对象，第二个元素是字符串
+  }
 }
 ```
