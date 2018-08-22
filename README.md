@@ -285,6 +285,7 @@ Vue.set(target,key,value)
     申诉
 </router-link>
 ```
+
 ### this.$router.push 传参
 ```javascript
 this.$router.push({
@@ -293,6 +294,17 @@ this.$router.push({
       name: 'boa'
    }
 })
+```
+
+### 解决this.$router.push无法在新窗口打开
+```javascript
+let routeData = this.$router.resolve({
+  name: '路由名称',
+  params: {
+    processId: processId
+  }
+})
+window.open(routeData.href, '_blank')
 ```
 
 ## (六)、vuex的使用
